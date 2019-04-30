@@ -3,11 +3,10 @@ package lab4;
 import java.util.Scanner;
 
 public class Main {
-	
+
 	static ControleDeAlunos gerenciador = new ControleDeAlunos();
 	static Scanner sc = new Scanner(System.in);
-	
-	
+
 	private static String menu() {
 		String menu = "(C)adastrar Aluno\n(E)xibir Aluno\n(N)ovo Grupo" + 
 		"\n(A)locar Aluno no Grupo e Imprimir Grupos" +
@@ -16,7 +15,8 @@ public class Main {
 		"\n(O)ra, vamos fechar o programa!\n\nOpção>";
 		return menu;
 	}
-	
+
+
 	public static void main(String[] args) {
 			
 			while(true) {

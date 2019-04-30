@@ -13,6 +13,9 @@ class GrupoTest {
 	Aluno aluno1;
 	
 	@Test
+	/**
+	 * Inicializa Grupo para as possiveis entradas e checa as devidas excessões
+	 */
 	void testGrupo() {
 		try{
 			grupo1 = new Grupo(null);
@@ -29,17 +32,26 @@ class GrupoTest {
 		}
 	}
 
+	/**
+	 * Cria um novo Grupo e Aluno
+	 */
 	@BeforeEach
 	void setup() {
 		grupo2 = new Grupo("colegas");
 		aluno1 = new Aluno("casa", "123", "odontologia");
 	}
+
+	/**
+	 * Cadastra aluno
+	 */
 	@Test
 	void testCadastraAluno() {
 		grupo2.cadastraAluno(aluno1);
-		
 	}
 
+	/**
+	 * verifica se o aluno foi cadastrado corretamente e o retorno do toString ocorre como esperado
+	 */
 	@Test
 	void testToString() {
 		assertEquals(grupo2.toString(),"Alunos do grupo colegas:\n");
