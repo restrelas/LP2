@@ -34,7 +34,6 @@ public class CRUDfornecedores {
 	String cadastraProdutoFornecedor(String nomeFornecedor, String nome, String descricao, double preco) {
 		if(!fornecedores.containsKey(nomeFornecedor)) return "Fornecedor não cadastrado";
 		return fornecedores.get(nomeFornecedor).cadastraProduto(nome, descricao, preco) ? "PRODUTO CADASTRADO COM SUCESSO!" : "Produto já cadastrado";
-
 		 
 	}
 }
