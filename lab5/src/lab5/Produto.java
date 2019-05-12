@@ -35,7 +35,7 @@ public class Produto {
 			return false;
 		Produto other = (Produto) obj;
 		if (descricao == null) {
-			if (other.descricao != null)
+			if (other.descricao != null)	
 				return false;
 		} else if (!descricao.equals(other.descricao))
 			return false;
