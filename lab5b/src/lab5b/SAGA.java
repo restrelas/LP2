@@ -11,7 +11,7 @@ public class SAGA {
 		clientes = new HashMap<String, Cliente>();
 		fornecedores = new HashMap<String, Fornecedor>();
 	}
-	
+//	US1
 	public String cadastrarCliente(String cpf, String nome, String email, String local) {
 		if(cpf.length() != 11) throw new Error("Erro no cadastro do cliente: cpf invalido.");
 		if(clientes.containsKey(cpf)) throw new IllegalArgumentException("Erro no cadastro do cliente: cliente ja existe.");
@@ -44,7 +44,7 @@ public class SAGA {
 		if(clientes.containsKey(cpf)) clientes.remove(cpf);
 		else throw new Error("cliente nao existe.");
 	}
-
+//	US2
 	public String adicionaFornecedor(String nome, String email, String telefone){
 		if(nome == null || nome.equals("")) throw new IllegalArgumentException("Erro no cadastro do fornecedor: nome nao pode ser vazio ou nulo.");
 		if(email == null || email.equals("")) throw new IllegalArgumentException("Erro no cadastro do fornecedor: email nao pode ser vazio ou nulo.");
@@ -77,5 +77,9 @@ public class SAGA {
 		if(nome.equals("") || nome == null) throw new IllegalArgumentException("Erro na remocao do fornecedor: nome do fornecedor nao pode ser vazio.");
 		if(!fornecedores.containsKey(nome)) throw new Error("Erro na remocao do fornecedor: fornecedor nao existe.");
 		fornecedores.remove(nome);
+	}
+//	US3
+	public void adicionaProduto(String forecedor, String nome, String descricao, double preco){
+
 	}
 }
