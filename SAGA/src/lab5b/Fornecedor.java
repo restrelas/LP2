@@ -5,7 +5,7 @@ import java.util.HashMap;
 /**
  * Classe que representa um fornecedor e armazena o conjunto de produtos daquele fornecedor
  */
-public class Fornecedor {
+public class Fornecedor implements Nomeavel{
 
     /**
      * Atributos privados, 3 Strings representando nome, email e telefone e um HashMap de Produtos identificados atravéz de IdProduto
@@ -119,4 +119,8 @@ public class Fornecedor {
         produtos.remove(temp);
     }
 
+    @Override
+    public String getNome() {
+        return this.nome;
+    }
 }

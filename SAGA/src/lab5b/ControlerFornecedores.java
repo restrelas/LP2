@@ -1,5 +1,7 @@
 package lab5b;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 /**
@@ -46,9 +48,15 @@ public class ControlerFornecedores {
      * @return Representação textual de todos os fornecedores separados por " - "
      */
     public String exibeFornecedores(){
+        NomeComparator comparator = new NomeComparator();
         String temp = new String();
-        for(Fornecedor it : fornecedores.values()){
-            temp += it.toString() + " - ";
+        ArrayList<Fornecedor> c = new ArrayList<Fornecedor>();
+        for(String it : fornecedores.keySet()){
+            c.add(fornecedores.get(it));
+        }
+        Collections.sort(c, comparator);
+        for(Fornecedor it : c){
+            temp += it.toString() + " | ";
         }
         return temp.length() > 2 ? temp.substring(0, temp.length() -3) : temp;
     }

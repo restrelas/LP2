@@ -3,7 +3,7 @@ package lab5b;
 /**
  * Classe que representa Cliete
  */
-public class Cliente {
+public class Cliente implements Comparable{
 	/**
 	 * Atributos privados, 4 Strings representando, cpf, nome, local e email do Cliente
 	 */
@@ -28,6 +28,7 @@ public class Cliente {
 		this.local = local;
 		this.email = email;
 	}
+
 
 	/**
 	 * @return Representação textual do Cliente, nome, local e email separados por " - "
@@ -58,5 +59,12 @@ public class Cliente {
 	 */
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getNome(){ return this.nome;}
+
+	@Override
+	public int compareTo(Object o) {
+		return nome.compareTo(((Cliente)o).getNome());
 	}
 }

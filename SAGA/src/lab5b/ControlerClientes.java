@@ -1,6 +1,9 @@
 package lab5b;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Classe responsável por gerencia as operações de Clientes e Armazenalos
@@ -54,8 +57,14 @@ public class ControlerClientes {
 	 */
 	public String exibeClientes() {
 		String temp = new String();
-		for(Cliente it : clientes.values()) {
-			temp += it.toString() + " - ";
+		List<Cliente> aux = new ArrayList<>();
+
+		for(String c: this.clientes.keySet()){
+			aux.add(this.clientes.get(c));
+		}
+		Collections.sort(aux);
+		for(Cliente it : aux) {
+			temp += it.toString() + " | ";
 		}
 		return temp.length() > 2 ? temp.substring(0, temp.length() - 3) : temp;
 	}

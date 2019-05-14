@@ -8,7 +8,8 @@ public class Facade {
     private ControlerFornecedores c2;
 
     public  static void main(String[] args){
-        args = new String[] {"lab5b.Facade", "acceptance_tests/use_case_1.txt", "acceptance_tests/use_case_2.txt", "acceptance_tests/use_case_3.txt"};
+        args = new String[] {"lab5b.Facade", "acceptance_tests/use_case_1.txt", "acceptance_tests/use_case_2.txt", "acceptance_tests/use_case_3.txt",
+                                "acceptance_tests/use_case_4.txt"};
         EasyAccept.main(args);
     }
 
@@ -57,5 +58,8 @@ public class Facade {
     }
     public void removeProduto(String nome, String descricao, String fornecedor){
         c2.removeProduto(nome, descricao, fornecedor);
+    }
+    public String exibeFornecedores(){
+        return c2.exibeFornecedores();
     }
 }
