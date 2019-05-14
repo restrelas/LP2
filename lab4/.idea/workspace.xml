@@ -2,13 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8103bac9-a923-4540-af9b-db58434980eb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/lab4/Aluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab4/Aluno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lab4/ControleDeAlunos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab4/ControleDeAlunos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lab4/Grupo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab4/Grupo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lab4/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab4/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/AlunoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/AlunoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/ControleDeAlunosTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/ControleDeAlunosTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/GrupoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/GrupoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5b/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5b/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5b/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5b/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5b/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5b/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5b/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5b/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5b/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5b/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5b/acceptance_tests/use_case_1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5b/acceptance_tests/use_case_2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5b/acceptance_tests/use_case_3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5b/lab5b.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5b/lib/easyaccept.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5b/src/lab5b/Cliente.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5b/src/lab5b/ControlerClientes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5b/src/lab5b/ControlerFornecedores.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5b/src/lab5b/Facade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5b/src/lab5b/Fornecedor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5b/src/lab5b/Produto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5b/src/tests/ClienteTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5b/src/tests/SAGATest.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,55 +33,21 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="132469623">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.2" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="10" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="10" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="5095" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="5095" />
-        </counts>
-      </usages-collector>
-    </session>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/tests/AlunoTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
-              <caret line="58" column="9" lean-forward="true" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+            <state relative-caret-position="714">
+              <caret line="44" column="16" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
               <folding>
-                <element signature="e#687#688#0" expanded="true" />
-                <element signature="e#738#739#0" expanded="true" />
-                <element signature="e#809#810#0" expanded="true" />
-                <element signature="e#871#872#0" expanded="true" />
-                <element signature="e#981#982#0" expanded="true" />
-                <element signature="e#1026#1027#0" expanded="true" />
-                <element signature="e#1143#1144#0" expanded="true" />
-                <element signature="e#1192#1193#0" expanded="true" />
-                <element signature="e#1309#1310#0" expanded="true" />
-                <element signature="e#1358#1359#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#875#876#0" expanded="true" />
+                <element signature="e#937#938#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -74,7 +56,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lab4/ControleDeAlunos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
+            <state relative-caret-position="1904">
               <caret line="117" column="20" selection-start-line="117" selection-start-column="8" selection-end-line="117" selection-end-column="20" />
             </state>
           </provider>
@@ -83,29 +65,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tests/ControleDeAlunosTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="130" column="7" lean-forward="true" selection-start-line="130" selection-start-column="7" selection-end-line="130" selection-end-column="7" />
-              <folding>
-                <element signature="e#297#298#0" expanded="true" />
-                <element signature="e#340#341#0" expanded="true" />
-                <element signature="e#440#441#0" expanded="true" />
-                <element signature="e#483#484#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="2040">
+              <caret line="130" column="7" selection-start-line="130" selection-start-column="7" selection-end-line="130" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tests/GrupoTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
               <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#836#837#0" expanded="true" />
-                <element signature="e#871#872#0" expanded="true" />
-                <element signature="e#931#932#0" expanded="true" />
-                <element signature="e#998#999#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -142,6 +114,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -170,11 +143,16 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556636247091" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
@@ -200,22 +178,26 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1556631356647</updated>
+      <workItem from="1557791296766" duration="234000" />
     </task>
     <servers />
   </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="234000" />
+  </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24958494" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24946696" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -223,14 +205,19 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Database" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
     </layout>
     <layout-to-restore>
       <window_info id="Image Layers" order="0" />
@@ -260,8 +247,8 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
     </layout-to-restore>
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/lab4/Grupo.java">
@@ -297,42 +284,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/AlunoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="58" column="9" lean-forward="true" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
-          <folding>
-            <element signature="e#687#688#0" expanded="true" />
-            <element signature="e#738#739#0" expanded="true" />
-            <element signature="e#809#810#0" expanded="true" />
-            <element signature="e#871#872#0" expanded="true" />
-            <element signature="e#981#982#0" expanded="true" />
-            <element signature="e#1026#1027#0" expanded="true" />
-            <element signature="e#1143#1144#0" expanded="true" />
-            <element signature="e#1192#1193#0" expanded="true" />
-            <element signature="e#1309#1310#0" expanded="true" />
-            <element signature="e#1358#1359#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lab4/ControleDeAlunos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
+        <state relative-caret-position="1904">
           <caret line="117" column="20" selection-start-line="117" selection-start-column="8" selection-end-line="117" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/ControleDeAlunosTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="130" column="7" lean-forward="true" selection-start-line="130" selection-start-column="7" selection-end-line="130" selection-end-column="7" />
-          <folding>
-            <element signature="e#297#298#0" expanded="true" />
-            <element signature="e#340#341#0" expanded="true" />
-            <element signature="e#440#441#0" expanded="true" />
-            <element signature="e#483#484#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="2040">
+          <caret line="130" column="7" selection-start-line="130" selection-start-column="7" selection-end-line="130" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -342,10 +304,18 @@
           <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#836#837#0" expanded="true" />
-            <element signature="e#871#872#0" expanded="true" />
-            <element signature="e#931#932#0" expanded="true" />
-            <element signature="e#998#999#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/AlunoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="44" column="16" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#875#876#0" expanded="true" />
+            <element signature="e#937#938#0" expanded="true" />
           </folding>
         </state>
       </provider>
