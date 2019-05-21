@@ -1,5 +1,7 @@
 package lab5b;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 /**
@@ -14,6 +16,7 @@ public class Fornecedor implements Nomeavel{
     private String email;
     private String telefone;
     private HashMap<IdProduto, Produto> produtos;
+    private HashMap<IdProduto, Combo> combos;
 
     /**
      * Inicializa uma nova variável do tipo Fornecedor, assim como um HashSet vazio
@@ -104,6 +107,24 @@ public class Fornecedor implements Nomeavel{
     }
 
     /**
+     * lista todos os produtos do fornecedor
+     * @return Representacao textual de todos os produtos do fornecedor separados por " - "
+     */
+    public String exibeProdutos(){
+        NomeComparator comparator = new NomeComparator();
+        String ans  = "";
+        ArrayList<Produto> temp = new ArrayList<Produto>();
+        for(Produto it : produtos.values()){
+            temp.add(it);
+        }
+        Collections.sort(temp, comparator);
+        for(Produto it : temp){
+            ans += nome + " - " + it.toString() + " | ";
+        }
+        return ans.length() > 2 ? ans.substring(0, ans.length() -3) : nome + " -";
+    }
+
+    /**
      * Remove um produto do Fornecedor
      * Obs:
      *  O Produto deve existir
@@ -122,5 +143,20 @@ public class Fornecedor implements Nomeavel{
     @Override
     public String getNome() {
         return this.nome;
+    }
+    //US4
+    public void adicionaCombo(String nome, String descricao, double fator, String itens){
+        if(combos.containsKey(nome)) throw new Error("Erro no cadastro de combo: combo ja existe.");
+        double preco = 0;
+        String[] temp = itens.split(", ");
+        for(String it : temp){
+            String[] sep = it.split(" - ");
+            IdProduto p = new IdProduto(sep[0], sep[1]);
+            if(combos.containsKey(sep[0]) || combos.containsKey(sep[1])) throw new Error("Erro no cadastro de combo: um combo nao pode possuir combos na lista de produtos.");
+            if(!produtos.containsKey(p)) throw new Error("Erro no cadastro de combo: produto nao existe.");
+            preco += produtos.get(p).getPreco();
+        }
+        preco *= (1.0 - fator);
+        combos.put(new IdProduto(nome, descricao), new Combo(nome, descricao, fator, preco));
     }
 }

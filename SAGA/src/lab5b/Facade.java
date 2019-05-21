@@ -9,7 +9,7 @@ public class Facade {
 
     public  static void main(String[] args){
         args = new String[] {"lab5b.Facade", "acceptance_tests/use_case_1.txt", "acceptance_tests/use_case_2.txt", "acceptance_tests/use_case_3.txt",
-                                "acceptance_tests/use_case_4.txt"};
+                                "acceptance_tests/use_case_4.txt", "acceptance_tests/use_case_5.txt"};
         EasyAccept.main(args);
     }
 
@@ -59,7 +59,18 @@ public class Facade {
     public void removeProduto(String nome, String descricao, String fornecedor){
         c2.removeProduto(nome, descricao, fornecedor);
     }
+    //US4
     public String exibeFornecedores(){
         return c2.exibeFornecedores();
+    }
+    public String exibeProdutos(){
+        return c2.exibeProdutos();
+    }
+    public String exibeProdutosFornecedor(String nomeFornecedor){
+        return c2.exibeProdutosFornecedor(nomeFornecedor);
+    }
+    //US5
+    public void adicionaCombo(String fornecedor, String nome, String descricao, double fator, String produtos){
+        c2.adicionaCombo(fornecedor, nome, descricao, fator, produtos);
     }
 }

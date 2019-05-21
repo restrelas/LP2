@@ -80,11 +80,10 @@ public class ControlerFornecedores {
 
     /**
      * Remove um fornecedor anteriormente adicionado
-     * @param nome
+     * @param nome nome do forncededor a ser removido
      */
-
     public void removeFornecedor(String nome){
-        if(nome.equals("") || nome == null) throw new IllegalArgumentException("Erro na remocao do fornecedor: nome do fornecedor nao pode ser vazio.");
+        if(nome == null || nome.equals("")) throw new IllegalArgumentException("Erro na remocao do fornecedor: nome do fornecedor nao pode ser vazio.");
         if(!fornecedores.containsKey(nome)) throw new Error("Erro na remocao do fornecedor: fornecedor nao existe.");
         fornecedores.remove(nome);
     }
@@ -124,6 +123,34 @@ public class ControlerFornecedores {
     }
 
     /**
+     * Ordena os fornecedores pelo nome, e lista todos os produtos de cada fornecedor, pela ordem de inserção dos produtos
+     * @return Representacao textual de todos os produtos de todos os fornecedores ja registrados
+     */
+    public String exibeProdutos(){
+        NomeComparator comparator = new NomeComparator();
+        String temp = new String();
+        ArrayList<Fornecedor> c = new ArrayList<Fornecedor>();
+        for(String it : fornecedores.keySet()){
+            c.add(fornecedores.get(it));
+        }
+        Collections.sort(c, comparator);
+        for(Fornecedor it : c){
+            temp += it.exibeProdutos() + " | ";
+        }
+        return temp.length() > 2 ? temp.substring(0, temp.length() -3) : temp;
+    }
+
+    /**
+     * Exibe todos os produtos do fornecedor
+     * @param nomeFornecedor Nome do fornecedor que deve ter os produtos imprimidos
+     * @return Representacao textual de todos os produtos de um fornecedor
+     */
+    public String exibeProdutosFornecedor(String nomeFornecedor){
+        if(nomeFornecedor == null || nomeFornecedor.equals("")) throw new IllegalArgumentException("Erro na exibicao de produto: fornecedor nao pode ser vazio ou nulo.");
+        if(!fornecedores.containsKey(nomeFornecedor)) throw new Error("Erro na exibicao de produto: fornecedor nao existe.");
+        return fornecedores.get(nomeFornecedor).exibeProdutos();
+    }
+    /**
      * Modifica o preco de um produto
      * obs:
      *   O fornecedor deve estar cadastrado
@@ -143,13 +170,24 @@ public class ControlerFornecedores {
 
     /**
      * Deleta um produto do fornecedor
-     * @param nome
-     * @param descricao
-     * @param fornecedor
+     * @param nome nome do produto
+     * @param descricao descricao do produto
+     * @param fornecedor nome do fornecedor
      */
     public void removeProduto(String nome, String descricao, String fornecedor){
         if(fornecedor == null || fornecedor.equals("")) throw new IllegalArgumentException("Erro na remocao de produto: fornecedor nao pode ser vazio ou nulo.");
         if(!fornecedores.containsKey(fornecedor)) throw new Error("Erro na remocao de produto: fornecedor nao existe.");
         fornecedores.get(fornecedor).removeProduto(nome, descricao);
+    }
+    //US4
+
+    public void adicionaCombo(String fornecedor, String nome, String descricao, double fator, String produtos){
+        if(fornecedor == null || fornecedor.equals("")) throw new IllegalArgumentException("Erro no cadastro de combo: fornecedor nao pode ser vazio ou nulo.");
+        if(nome == null || nome.equals("")) throw new IllegalArgumentException("Erro no cadastro de combo: nome nao pode ser vazio ou nulo.");
+        if(descricao == null || descricao.equals("")) throw new IllegalArgumentException("Erro no cadastro de combo: descricao nao pode ser vazia ou nula.");
+        if(produtos == null || produtos.equals("")) throw new IllegalArgumentException("Erro no cadastro de combo: combo deve ter produtos.");
+        if(!fornecedores.containsKey(fornecedor)) throw new Error("Erro no cadastro de combo: fornecedor nao existe.");
+        if(fator < 0 || fator >= 1) throw new ArithmeticException("Erro no cadastro de combo: fator invalido.");
+        fornecedores.get(fornecedor).adicionaCombo(nome, descricao, fator, produtos);
     }
 }

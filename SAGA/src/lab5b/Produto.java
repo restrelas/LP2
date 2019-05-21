@@ -6,7 +6,7 @@ import java.util.Objects;
 /**
  * Classe que representa produto
  */
-public class Produto {
+public class Produto implements Nomeavel{
     /**
      * Atributos privados que armazenam nome, descricao e preco
      */
@@ -34,10 +34,28 @@ public class Produto {
         this.preco = preco;
     }
 
+    /**
+     * Pega o nome do produto
+     * @return nome do produto
+     */
+    public String getNome(){
+        return nome;
+    }
+
+    /**
+     * Pega o preco do produto
+      * @return preco do produto
+     */
+    public double getPreco(){
+        return this.preco;
+    }
+    /**
+     * Representa o produto textualmente com o valor tendo apenas duas casas decimais
+     * @return nome, descricao e valor do produto deparados por " - ", e o valor representado em real com duas casas decimais
+     */
     @Override
     public String toString(){
         return nome + " - " + descricao + " - " + "R$" + String.format("%.2f", preco).replace('.', ',');
-
     }
 
     /**
