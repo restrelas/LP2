@@ -32,6 +32,7 @@ public class Fornecedor implements Nomeavel{
         this.email = email;
         this.telefone = telefone;
         produtos = new HashMap<IdProduto, Produto>();
+        combos = new HashMap<IdProduto, Combo>();
     }
 
     /**
