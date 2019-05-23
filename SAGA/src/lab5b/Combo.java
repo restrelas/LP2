@@ -2,22 +2,23 @@ package lab5b;
 
 import java.util.ArrayList;
 
-public class Combo {
+public class Combo extends Produto {
 
-    private String nome;
-    private String descricao;
     private double fator;
-    private double preco;
+    private double precoatual;
 
-    public Combo(String nome, String descricao, double fator, double preco){
-        this.nome = nome;
-        this.descricao = descricao;
+    public Combo(String nome, String descricao, double fator, double preco, double precoatual){
+        super(nome, descricao, preco);
         this.fator = fator;
-        this.preco = preco;
+        this.precoatual = precoatual;
     }
 
     @Override
     public String toString(){
         return nome + " - " + descricao + " - " + "R$" + String.format("%.2f", preco).replace('.', ',');
+    }
+    public void setFator(double novoFator){
+        fator = novoFator;
+        preco = precoatual * (1.0 - fator);
     }
 }

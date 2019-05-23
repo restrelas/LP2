@@ -14,7 +14,7 @@ expectError "Erro no cadastro de produto: fornecedor nao pode ser vazio ou nulo.
 
 ## Adicionando combos ##
 
-adicionaCombo fornecedor="Seu Olavo" nome="X-burguer + suco" descricao="X-burguer com suco de maracuja" fator=0.20 produtos="X-burguer - Hamburguer de carne com queijo e calabresa, Suco - Suco de maracuja (copo)"
+    adicionaCombo fornecedor="Seu Olavo" nome="X-burguer + suco" descricao="X-burguer com suco de maracuja" fator=0.20 produtos="X-burguer - Hamburguer de carne com queijo e calabresa, Suco - Suco de maracuja (copo)"
 adicionaCombo fornecedor="Seu Olavo" nome="X-burguer + refrigerante" descricao="X-burguer com refri (lata)" fator=0.20 produtos="X-burguer - Hamburguer de carne com queijo e calabresa, Coca-cola - Coca-cola (lata)"
 adicionaCombo fornecedor="Dona Alba" nome="Rubacao com suco" descricao="Rubacao completo com suco" fator=0.15 produtos="Rubacao - Feijao com arroz e queijo coalho, Suco - Suco de goiaba (copo)"
 adicionaCombo fornecedor="Marcos" nome="Coxao com batata" descricao="Coxao de frango com batata frita" fator=0.30 produtos="Coxao de Frango - Coxao de frango com cheddar, Refrigerante - Refrigerante (lata)" 

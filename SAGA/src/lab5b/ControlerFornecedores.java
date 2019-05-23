@@ -187,7 +187,15 @@ public class ControlerFornecedores {
         if(descricao == null || descricao.equals("")) throw new IllegalArgumentException("Erro no cadastro de combo: descricao nao pode ser vazia ou nula.");
         if(produtos == null || produtos.equals("")) throw new IllegalArgumentException("Erro no cadastro de combo: combo deve ter produtos.");
         if(!fornecedores.containsKey(fornecedor)) throw new Error("Erro no cadastro de combo: fornecedor nao existe.");
-        if(fator < 0 || fator >= 1) throw new ArithmeticException("Erro no cadastro de combo: fator invalido.");
+        if(fator <= 0 || fator >= 1) throw new ArithmeticException("Erro no cadastro de combo: fator invalido.");
         fornecedores.get(fornecedor).adicionaCombo(nome, descricao, fator, produtos);
+    }
+    public void editaCombo(String nome, String descricao, String fornecedor, double novoFator){
+        if(fornecedor == null || fornecedor.equals("")) throw new IllegalArgumentException("Erro na edicao de combo: fornecedor nao pode ser vazio ou nulo.");
+        if(nome == null || nome.equals("")) throw new IllegalArgumentException("Erro na edicao de combo: nome nao pode ser vazio ou nulo.");
+        if(descricao == null || descricao.equals("")) throw new IllegalArgumentException("Erro na edicao de combo: descricao nao pode ser vazia ou nula.");
+        if(!fornecedores.containsKey(fornecedor)) throw new Error("Erro na edicao de combo: fornecedor nao existe.");
+        if(novoFator <= 0 || novoFator >= 1) throw new ArithmeticException("Erro na edicao de combo: fator invalido.");
+        fornecedores.get(fornecedor).editaCombo(nome, descricao, novoFator);
     }
 }

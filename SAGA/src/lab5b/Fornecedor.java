@@ -86,8 +86,9 @@ public class Fornecedor implements Nomeavel{
     public String exibeProduto(String nome, String descricao){
         if(nome == null || nome.equals("")) throw new IllegalArgumentException("Erro na exibicao de produto: nome nao pode ser vazio ou nulo.");
         if(descricao == null || descricao.equals("")) throw new IllegalArgumentException("Erro na exibicao de produto: descricao nao pode ser vazia ou nula.");
-        if(!produtos.containsKey(new IdProduto(nome, descricao))) throw new Error("Erro na exibicao de produto: produto nao existe.");
-        return produtos.get(new IdProduto(nome, descricao)).toString();
+        IdProduto id = new IdProduto(nome, descricao);
+        if(!produtos.containsKey(id) && !combos.containsKey(id)) throw new Error("Erro na exibicao de produto: produto nao existe.");
+        return produtos.containsKey(id) ? produtos.get(id).toString() : combos.get(id).toString();
     }
 
     /**
@@ -118,6 +119,9 @@ public class Fornecedor implements Nomeavel{
         for(Produto it : produtos.values()){
             temp.add(it);
         }
+        for(Produto it : combos.values()){
+            temp.add(it);
+        }
         Collections.sort(temp, comparator);
         for(Produto it : temp){
             ans += nome + " - " + it.toString() + " | ";
@@ -137,8 +141,10 @@ public class Fornecedor implements Nomeavel{
         if(nome == null || nome.equals("")) throw new IllegalArgumentException("Erro na remocao de produto: nome nao pode ser vazio ou nulo.");
         if(descricao == null || descricao.equals("")) throw new IllegalArgumentException("Erro na remocao de produto: descricao nao pode ser vazia ou nula.");
         IdProduto temp = new IdProduto(nome, descricao);
-        if(!produtos.containsKey(temp)) throw new Error("Erro na remocao de produto: produto nao existe.");
-        produtos.remove(temp);
+        if(!produtos.containsKey(temp) && !combos.containsKey(temp)) throw new Error("Erro na remocao de produto: produto nao existe.");
+        if(produtos.containsKey(temp)){
+            produtos.remove(temp);
+        }else combos.remove(temp);
     }
 
     @Override
@@ -147,17 +153,23 @@ public class Fornecedor implements Nomeavel{
     }
     //US4
     public void adicionaCombo(String nome, String descricao, double fator, String itens){
-        if(combos.containsKey(nome)) throw new Error("Erro no cadastro de combo: combo ja existe.");
-        double preco = 0;
+        double precoatual = 0;
         String[] temp = itens.split(", ");
         for(String it : temp){
             String[] sep = it.split(" - ");
             IdProduto p = new IdProduto(sep[0], sep[1]);
-            if(combos.containsKey(sep[0]) || combos.containsKey(sep[1])) throw new Error("Erro no cadastro de combo: um combo nao pode possuir combos na lista de produtos.");
+            if(combos.containsKey(p)) throw new Error("Erro no cadastro de combo: um combo nao pode possuir combos na lista de produtos.");
             if(!produtos.containsKey(p)) throw new Error("Erro no cadastro de combo: produto nao existe.");
-            preco += produtos.get(p).getPreco();
+            precoatual += produtos.get(p).getPreco();
         }
-        preco *= (1.0 - fator);
-        combos.put(new IdProduto(nome, descricao), new Combo(nome, descricao, fator, preco));
+        double preco = precoatual * (1.0 - fator);
+        IdProduto id = new IdProduto(nome, descricao);
+        if(combos.containsKey(id)) throw new Error("Erro no cadastro de combo: combo ja existe.");
+        combos.put(id, new Combo(nome, descricao, fator, preco, precoatual));
+    }
+    public void editaCombo(String nome, String descricao, double novoFator){
+        IdProduto id = new IdProduto(nome, descricao);
+        if(!combos.containsKey(id)) throw new Error("Erro na edicao de combo: produto nao existe.");
+        combos.get(id).setFator(novoFator);
     }
 }

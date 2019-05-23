@@ -73,4 +73,7 @@ public class Facade {
     public void adicionaCombo(String fornecedor, String nome, String descricao, double fator, String produtos){
         c2.adicionaCombo(fornecedor, nome, descricao, fator, produtos);
     }
+    public void editaCombo(String nome, String descricao, String fornecedor, double novoFator){
+        c2.editaCombo(nome, descricao, fornecedor, novoFator);
+    }
 }
