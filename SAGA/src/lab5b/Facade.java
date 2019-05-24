@@ -4,76 +4,91 @@ import easyaccept.EasyAccept;
 
 public class Facade {
 
-    private ControlerClientes c1;
-    private ControlerFornecedores c2;
+    private SAGA saga;
 
     public  static void main(String[] args){
         args = new String[] {"lab5b.Facade", "acceptance_tests/use_case_1.txt", "acceptance_tests/use_case_2.txt", "acceptance_tests/use_case_3.txt",
-                                "acceptance_tests/use_case_4.txt", "acceptance_tests/use_case_5.txt"};
+                                "acceptance_tests/use_case_4.txt", "acceptance_tests/use_case_5.txt", "acceptance_tests/use_case_6.txt",
+                                "acceptance_tests/use_case_7.txt"};
         EasyAccept.main(args);
     }
 
     public Facade(){
-        c1 = new ControlerClientes();
-        c2 = new ControlerFornecedores();
+        saga = new SAGA();
     }
     //US1
     public String adicionaCliente(String cpf, String nome, String email, String local){
-        return c1.cadastrarCliente(cpf, nome, email, local);
+        return saga.adicionaCliente(cpf, nome, email, local);
     }
     public String exibeCliente(String cpf){
-        return c1.exibeCliente(cpf);
+        return saga.exibeCliente(cpf);
     }
     public String exibeClientes(){
-        return c1.exibeClientes();
+        return saga.exibeClientes();
     }
     public void editaCliente(String cpf, String atributo, String novoValor){
-        c1.editaCliente(cpf, atributo, novoValor);
+        saga.editaCliente(cpf, atributo, novoValor);
     }
     public void removeCliente(String cpf){
-        c1.removeCliente(cpf);
+        saga.removeCliente(cpf);
     }
     //US2
     public String adicionaFornecedor(String nome, String email, String telefone){
-        return c2.adicionaFornecedor(nome, email, telefone);
+        return saga.adicionaFornecedor(nome, email, telefone);
     }
     public String exibeFornecedor(String nome){
-        return c2.exibeFornecedor(nome);
+        return saga.exibeFornecedor(nome);
     }
     public void editaFornecedor(String nome, String atributo, String novoValor){
-        c2.editaFornecedor(nome, atributo, novoValor);
+        saga.editaFornecedor(nome, atributo, novoValor);
     }
     public void removeFornecedor(String nome){
-        c2.removeFornecedor(nome);
+        saga.removeFornecedor(nome);
     }
     //US3
     public void adicionaProduto(String fornecedor, String nome, String descricao, double preco){
-        c2.adicionaProduto(fornecedor, nome, descricao, preco);
+        saga.adicionaProduto(fornecedor, nome, descricao, preco);
     }
     public String exibeProduto(String nome, String descricao, String fornecedor){
-        return c2.exibeProduto(nome, descricao, fornecedor);
+        return saga.exibeProduto(nome, descricao, fornecedor);
     }
     public String editaProduto(String nome, String descricao, String fornecedor, double preco){
-        return c2.editaProduto(nome, descricao, fornecedor, preco);
+        return saga.editaProduto(nome, descricao, fornecedor, preco);
     }
     public void removeProduto(String nome, String descricao, String fornecedor){
-        c2.removeProduto(nome, descricao, fornecedor);
+        saga.removeProduto(nome, descricao, fornecedor);
     }
     //US4
     public String exibeFornecedores(){
-        return c2.exibeFornecedores();
+        return saga.exibeFornecedores();
     }
     public String exibeProdutos(){
-        return c2.exibeProdutos();
+        return saga.exibeProdutos();
     }
     public String exibeProdutosFornecedor(String nomeFornecedor){
-        return c2.exibeProdutosFornecedor(nomeFornecedor);
+        return saga.exibeProdutosFornecedor(nomeFornecedor);
     }
     //US5
     public void adicionaCombo(String fornecedor, String nome, String descricao, double fator, String produtos){
-        c2.adicionaCombo(fornecedor, nome, descricao, fator, produtos);
+        saga.adicionaCombo(fornecedor, nome, descricao, fator, produtos);
     }
     public void editaCombo(String nome, String descricao, String fornecedor, double novoFator){
-        c2.editaCombo(nome, descricao, fornecedor, novoFator);
+        saga.editaCombo(nome, descricao, fornecedor, novoFator);
+    }
+    //US6
+    public void adicionaCompra(String cpf, String fornecedor, String data, String nome, String descricao){
+        saga.adicionaCompra(cpf, fornecedor, data, nome, descricao);
+    }
+    public String getDebito(String cpf, String fornecedor){
+        return saga.getDebito(cpf, fornecedor);
+    }
+    public String exibeContas(String cpf, String fornecedor){
+        return saga.exibeContas(cpf, fornecedor);
+    }
+    public String exibeContasClientes(String cpf){
+        return saga.exibeContasClientes(cpf);
+    }
+    public void realizaPagamento(String cpf, String fornecedor){
+        saga.realizaPagamento(cpf, fornecedor);
     }
 }

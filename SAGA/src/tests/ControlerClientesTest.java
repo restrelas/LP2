@@ -23,24 +23,24 @@ class ControlerClientesTest {
 
 	@Test
 	void testCadastrarCliente() {
-		assertThrows(Error.class, () -> c1.cadastrarCliente("1234567891", "asldj", "alsdasd", "alsdkjal"));
+		assertThrows(Error.class, () -> c1.adicionaCliente("1234567891", "asldj", "alsdasd", "alsdkjal"));
 		assertDoesNotThrow(() -> new Cliente("12345678910", "sadjkfhaksl", "dhasfhask", "asasdpewrqo"));
-		assertThrows(IllegalArgumentException.class, () -> c1.cadastrarCliente("12345678910", "", "dsaf", "asdf"));
-		assertThrows(IllegalArgumentException.class, () -> c1.cadastrarCliente("12345678910", "asdfhl", "", "dasfads"));
-		assertThrows(IllegalArgumentException.class, () -> c1.cadastrarCliente("12345678910", "asdfhl", "asdfasfas", ""));
+		assertThrows(IllegalArgumentException.class, () -> c1.adicionaCliente("12345678910", "", "dsaf", "asdf"));
+		assertThrows(IllegalArgumentException.class, () -> c1.adicionaCliente("12345678910", "asdfhl", "", "dasfads"));
+		assertThrows(IllegalArgumentException.class, () -> c1.adicionaCliente("12345678910", "asdfhl", "asdfasfas", ""));
 
 	}
 
 	@Test
 	void testExibeCliente() {
-		c1.cadastrarCliente("12345678901", "l", "l", "o");
+		c1.adicionaCliente("12345678901", "l", "l", "o");
 		assertEquals("l - o - l", c1.exibeCliente("12345678901"));
 		assertThrows(Error.class, () -> c1.exibeCliente("12345678910"));
 	}
 
 	@Test
 	void testEditaCliente() {
-		c1.cadastrarCliente("12345678901", "l", "l", "o");
+		c1.adicionaCliente("12345678901", "l", "l", "o");
 		c1.editaCliente("12345678901", "nome", "d");
 		assertEquals("d - o - l", c1.exibeCliente("12345678901"));
 		assertThrows(IllegalArgumentException.class, () -> c1.editaCliente("12345678901", "cpf", "d"));
@@ -55,7 +55,7 @@ class ControlerClientesTest {
 
 	@Test
 	void testRemoveCliente(){
-		c1.cadastrarCliente("12345678901", "l", "l", "o");
+		c1.adicionaCliente("12345678901", "l", "l", "o");
 		assertDoesNotThrow(() ->c1.removeCliente("12345678901"));
 		assertThrows(Error.class, () ->c1.removeCliente("12345678901"));
 		assertThrows(Error.class, () ->c1.removeCliente("901"));

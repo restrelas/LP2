@@ -27,7 +27,7 @@ public class Fornecedor implements Nomeavel{
     public Fornecedor(String nome, String email, String telefone){
         if(nome == null || nome.equals("")) throw new IllegalArgumentException("Erro no cadastro do fornecedor: nome nao pode ser vazio ou nulo.");
         if(email == null || email.equals("")) throw new IllegalArgumentException("Erro no cadastro do fornecedor: email nao pode ser vazio ou nulo.");
-        if(telefone == null || telefone.equals("")) throw new IllegalArgumentException("Erro no cadastro do fornecedor: telefone nao pode ser vazio ou nulo");
+        if(telefone == null || telefone.equals("")) throw new IllegalArgumentException("Erro no cadastro do fornecedor: telefone nao pode ser vazio ou nulo.");
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
@@ -103,7 +103,7 @@ public class Fornecedor implements Nomeavel{
         if(nome == null || nome.equals("")) throw new IllegalArgumentException("Erro na edicao de produto: nome nao pode ser vazio ou nulo.");
         if(preco < 0) throw new ArithmeticException("Erro na edicao de produto: preco invalido.");
         IdProduto temp = new IdProduto(nome, descricao);
-        if(!produtos.containsKey(temp)) throw new Error("Erro na edicao de produto: produto nao cadastrado.");
+        if(!produtos.containsKey(temp)) throw new Error("Erro na edicao de produto: produto nao existe.");
         produtos.get(temp).setPreco(preco);
         return produtos.get(temp).toString();
     }
@@ -172,4 +172,12 @@ public class Fornecedor implements Nomeavel{
         if(!combos.containsKey(id)) throw new Error("Erro na edicao de combo: produto nao existe.");
         combos.get(id).setFator(novoFator);
     }
+    public Produto getProduto(String nome, String descricao){
+        IdProduto id = new IdProduto(nome, descricao);
+        if(!produtos.containsKey(id) && !combos.containsKey(id)) throw new Error("Erro ao cadastrar compra: produto nao existe.");
+        if(produtos.containsKey(id)) return produtos.get(id);
+        else return combos.get(id);
+    }
+
+
 }

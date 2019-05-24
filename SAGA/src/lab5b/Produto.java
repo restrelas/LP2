@@ -49,6 +49,14 @@ public class Produto implements Nomeavel{
     public double getPreco(){
         return this.preco;
     }
+
+    /**
+     * Pega a descricao do produto
+     * @return descricao do produto
+     */
+    public String getDescricao(){
+        return this.descricao;
+    }
     /**
      * Representa o produto textualmente com o valor tendo apenas duas casas decimais
      * @return nome, descricao e valor do produto deparados por " - ", e o valor representado em real com duas casas decimais
