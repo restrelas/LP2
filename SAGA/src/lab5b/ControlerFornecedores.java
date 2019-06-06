@@ -69,10 +69,11 @@ public class ControlerFornecedores {
      * @param novoValor novo valor a ser atribuito ao atributo especificado
      */
     public void editaFornecedor(String nome, String atributo, String novoValor){
-        if(!fornecedores.containsKey(nome)) throw new Error("Erro na edicao do fornecedor: fornecedor nao existe.");
-        if(atributo.equals("") || atributo == null) throw new IllegalArgumentException("Erro na edicao do fornecedor: atributo nao pode ser vazio ou nulo.");
-        if(novoValor.equals("") || novoValor == null) throw new IllegalArgumentException("Erro na edicao do fornecedor: novo valor nao pode ser vazio ou nulo.");
+        if(nome == null || nome.equals("")) throw new IllegalArgumentException("Erro na edicao do fornecedor: nome nao pode ser vazio ou nulo.");
+        if(atributo == null || atributo.equals("")) throw new IllegalArgumentException("Erro na edicao do fornecedor: atributo nao pode ser vazio ou nulo.");
+        if(novoValor == null || novoValor.equals("")) throw new IllegalArgumentException("Erro na edicao do fornecedor: novo valor nao pode ser vazio ou nulo.");
         if(atributo.equals("nome")) throw new IllegalArgumentException("Erro na edicao do fornecedor: nome nao pode ser editado.");
+        if(!fornecedores.containsKey(nome)) throw new Error("Erro na edicao do fornecedor: fornecedor nao existe.");
         else if(atributo.equals("email")) fornecedores.get(nome).setEmail(novoValor);
         else if(atributo.equals("telefone")) fornecedores.get(nome).setTelefone(novoValor);
         else throw new Error("Erro na edicao do fornecedor: atributo nao existe.");
@@ -83,7 +84,7 @@ public class ControlerFornecedores {
      * @param nome nome do forncededor a ser removido
      */
     public void removeFornecedor(String nome){
-        if(nome == null || nome.equals("")) throw new IllegalArgumentException("Erro na remocao do fornecedor: nome do fornecedor nao pode ser vazio.");
+        if(nome == null || nome.equals("")) throw new IllegalArgumentException("Erro na remocao do fornecedor: nome do fornecedor nao pode ser vazio ou nulo.");
         if(!fornecedores.containsKey(nome)) throw new Error("Erro na remocao do fornecedor: fornecedor nao existe.");
         fornecedores.remove(nome);
     }
@@ -197,5 +198,13 @@ public class ControlerFornecedores {
         if(!fornecedores.containsKey(fornecedor)) throw new Error("Erro na edicao de combo: fornecedor nao existe.");
         if(novoFator <= 0 || novoFator >= 1) throw new ArithmeticException("Erro na edicao de combo: fator invalido.");
         fornecedores.get(fornecedor).editaCombo(nome, descricao, novoFator);
+    }
+    //US6
+    public Produto getProduto(String fornecedor, String nome, String descricao){
+        if(!fornecedores.containsKey(fornecedor)) throw new Error("Erro ao cadastrar compra: fornecedor nao existe.");
+        return fornecedores.get(fornecedor).getProduto(nome, descricao);
+    }
+    public boolean checkFornecedor(String fornecedor){
+        return fornecedores.containsKey(fornecedor);
     }
 }

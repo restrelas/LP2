@@ -1,5 +1,8 @@
 package lab5b;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  * Classe que representa Cliete
  */
@@ -11,7 +14,8 @@ public class Cliente implements Comparable{
 	private String nome;
 	private String local;
 	private String email;
-
+	private HashMap<String, Conta> contas;
+	private ArrayList<String> gambiarra;
 	/**
 	 * Inicializa uma nova variavel do tipo Cliente
 	 * @param cpf
@@ -27,6 +31,8 @@ public class Cliente implements Comparable{
 		this.nome = nome;
 		this.local = local;
 		this.email = email;
+		this.contas = new HashMap<String, Conta>();
+		this.gambiarra = new ArrayList<String>();
 	}
 
 
@@ -66,5 +72,29 @@ public class Cliente implements Comparable{
 	@Override
 	public int compareTo(Object o) {
 		return nome.compareTo(((Cliente)o).getNome());
+	}
+
+	public void adicionaCompra(String fornecedor, String data, Produto p){
+		if(!contas.containsKey(fornecedor)) {
+			contas.put(fornecedor, new Conta(data, p));
+			gambiarra.add(fornecedor);
+		}
+		else contas.get(fornecedor).adicionaCompra(data, p);
+	}
+	public String getDebito(String fornecedor){
+		if(!contas.containsKey(fornecedor)) throw new IllegalArgumentException("Erro ao recuperar debito: cliente nao tem debito com fornecedor.");
+		return contas.get(fornecedor).getDebito();
+	}
+	public String exibeContas(String fornecedor){
+		if(!contas.containsKey(fornecedor)) throw new Error("Erro ao exibir conta do cliente: cliente nao tem nenhuma conta com o fornecedor.");
+		return contas.get(fornecedor).exibeContas();
+	}
+	public String exibeContasClientes(){
+		if(contas.isEmpty()) throw new Error("Erro ao exibir contas do cliente: cliente nao tem nenhuma conta.");
+		String ans = "";
+		for(String it : gambiarra){
+			ans += " | " + it + contas.get(it).exibeContas();
+		}
+		return ans;
 	}
 }

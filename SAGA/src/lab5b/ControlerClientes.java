@@ -34,7 +34,8 @@ public class ControlerClientes {
 	 * @param local
 	 * @return
 	 */
-	public String cadastrarCliente(String cpf, String nome, String email, String local) {
+	public String adicionaCliente(String cpf, String nome, String email, String local) {
+		if(cpf == null || cpf.equals("")) throw new IllegalArgumentException("Erro no cadastro do cliente: cpf nao pode ser vazio ou nulo.");
 		if(cpf.length() != 11) throw new Error("Erro no cadastro do cliente: cpf invalido.");
 		if(clientes.containsKey(cpf)) throw new IllegalArgumentException("Erro no cadastro do cliente: cliente ja existe.");
 		clientes.put(cpf, new Cliente(cpf, nome, email, local));
@@ -47,6 +48,7 @@ public class ControlerClientes {
 	 * @return Representação textual do Cliente
 	 */
 	public String exibeCliente(String cpf) {
+		if(cpf == null || cpf.equals("")) throw new IllegalArgumentException("Erro na exibicao do cliente: cpf nao pode ser vazio ou nulo.");
 		if(clientes.containsKey(cpf)) return clientes.get(cpf).toString();
 		throw new Error("Erro na exibicao do cliente: cliente nao existe.");
 }
@@ -80,9 +82,10 @@ public class ControlerClientes {
 	 * @param novoValor
 	 */
 	public void editaCliente(String cpf, String atributo, String novoValor) {
+		if(atributo == null || atributo.equals("")) throw new IllegalArgumentException("Erro na edicao do cliente: atributo nao pode ser vazio ou nulo.");
+		if(novoValor == null || novoValor.equals("")) throw new IllegalArgumentException("Erro na edicao do cliente: novo valor nao pode ser vazio ou nulo.");
+		if(cpf == null || cpf.equals("")) throw new IllegalArgumentException("Erro na edicao do cliente: cpf nao pode ser vazio ou nulo.");
 		if(!clientes.containsKey(cpf)) throw new Error("Erro na edicao do cliente: cliente nao existe.");
-		if(atributo.equals("") || atributo == null) throw new IllegalArgumentException("Erro na edicao do cliente: atributo nao pode ser vazio ou nulo.");
-		if(novoValor.equals("") || novoValor == null) throw new IllegalArgumentException("Erro na edicao do cliente: novo valor nao pode ser vazio ou nulo.");
 		if(atributo.equals("nome")) clientes.get(cpf).setNome(novoValor);
 		else if(atributo.equals("cpf")) throw new IllegalArgumentException("Erro na edicao do cliente: cpf nao pode ser editado.");
 		else if(atributo.equals("email")) clientes.get(cpf).setEmail(novoValor);
@@ -95,7 +98,33 @@ public class ControlerClientes {
 	 * @param cpf
 	 */
 	public void removeCliente(String cpf){
+		if(cpf == null || cpf.equals("")) throw new IllegalArgumentException("Erro na remocao do cliente: cpf nao pode ser vazio ou nulo");
 		if(clientes.containsKey(cpf)) clientes.remove(cpf);
-		else throw new Error("cliente nao existe.");
+		else throw new Error("Erro na remocao do cliente: cliente nao existe.");
+	}
+	//US6
+	public void adicionaCompra(String cpf, String fornecedor, String data, Produto p){
+		if(!clientes.containsKey(cpf)) throw new Error("Erro ao cadastrar compra: cliente nao existe.");
+		clientes.get(cpf).adicionaCompra(fornecedor, data, p);
+	}
+	public String getDebito(String cpf, String fornecedor){
+		if(!clientes.containsKey(cpf)) throw new Error("Erro ao recuperar debito: cliente nao existe.");
+		return clientes.get(cpf).getDebito(fornecedor);
+	}
+	public String exibeContas(String cpf, String fornecedor){
+		if(!clientes.containsKey(cpf)) throw new Error("Erro ao exibir conta do cliente: cliente nao existe.");
+		String ans = new String("Cliente: ");
+		ans += clientes.get(cpf).getNome() + " | " + fornecedor;
+		ans += clientes.get(cpf).exibeContas(fornecedor);
+		return ans;
+	}
+	public String exibeContasClientes(String cpf){
+		if(!clientes.containsKey(cpf)) throw new Error("Erro ao exibir contas do cliente: cliente nao existe.");
+		String ans = "Cliente: " + clientes.get(cpf).getNome() + clientes.get(cpf).exibeContasClientes();
+		return ans;
+	}
+	public void realizaPagamento(String cpf, String fornecedor){
+
+
 	}
 }
