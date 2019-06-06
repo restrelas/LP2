@@ -40,7 +40,7 @@ class ControllerTest {
     @Test
     /**
      * checa o retorno sendo 0, caso nao haja animais cadastrados
-     * checa o retorno sendo 1, quando a animais para serem removidos
+     * checa o retorno sendo o indicide do animal, quando existe pelo menos um animal cadastrado
      * e verifica se o animal é removido corretamente
      */
     public void removerTest(){
