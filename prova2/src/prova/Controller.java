@@ -54,5 +54,3 @@ public class Controller {
         return 0;
     }
 }
-// assertThrows(exception.class, () -> function);
-//    assertDoesNotThrows(() -> funcion);
