@@ -1,3 +1,3 @@
 # LP2
 
-this is the shit I had to do
+Tasks of LP2, an undergraduate course
